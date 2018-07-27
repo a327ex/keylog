@@ -21,9 +21,9 @@ def storeCounts():
         countfile.write(str(count))
         countfile.close()
         count = 0
-        sleep(600.0)
+        sleep(3600.0)
 
-captureThread = Timer(600.0, storeCounts)
+captureThread = Timer(3600.0, storeCounts)
 captureThread.start()
 
 hookmgr = pyHook.HookManager()
