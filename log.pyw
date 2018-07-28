@@ -17,7 +17,7 @@ def storeCounts():
     while True:
         global count
         now = datetime.datetime.now()
-        countfile = open("C:/Users/gen/Desktop/dev/keylog/logs/" + str(now.day) + str(now.month) + str(now.year) + "-" + str(now.hour) + str(now.minute) + str(now.second), "w")
+        countfile = open("C:/Users/gen/Desktop/dev/keylog/logs/" + str(now.day) + '-' + str(now.month) + '-' + str(now.year) + "_" + str(now.hour) + '-' + str(now.minute) + '-' + str(now.second), "w")
         countfile.write(str(count))
         countfile.close()
         count = 0
