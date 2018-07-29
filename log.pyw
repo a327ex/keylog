@@ -1,4 +1,4 @@
-import pythoncom, pyHook
+import keyboard
 import timer
 import sys
 import datetime
@@ -11,7 +11,6 @@ count = 0
 def onKeyUp(event):
     global count 
     count = count + 1
-    return True
 
 def storeCounts():
     while True:
@@ -26,7 +25,5 @@ def storeCounts():
 captureThread = Timer(3600.0, storeCounts)
 captureThread.start()
 
-hookmgr = pyHook.HookManager()
-hookmgr.KeyUp = onKeyUp
-hookmgr.HookKeyboard()
-pythoncom.PumpMessages()
+keyboard.on_release(onKeyUp)
+keyboard.wait()
